@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTUDOS HTML e CSS</title> <!--Criei o cógigo para entender as funcionalidades na prática-->
+</head>
+<body>
+
+    <!--Nesse campo iniciamos a estilização da página Web, que é definido com o style-->
+    <style>
+        * { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Nesse campo estilizamos os titulos criados no HTML*/
+h2, h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #c8b7b7;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+textarea {
+    height: 80px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #368be5;
+}
+
+ul {
+    list-style: none;
+    padding: 10;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+
+    <form action="" method="post"> <!--Declaramos o uso do formulario no código-->
+
+        <!-- A declaração do h significa que estamos criando um título na página. Usa-se o h de 1 até no maximo 6.-->
+        <h2>Tabela</h2> <!--Para deixar organizado na visualização da página. Facilita o entendimento do aluno que olhar para o código e para a tela-->
+
+        <table border="1"> <!--Nesse campo iremos declarar a criação de uma tabela´, com o uso da palavra table. Além disso definimos a margem com o border="1" para melhor visualização no front-->
+            
+            <!--Tables são organizadas por três elementos de organizações diferentes: tr; td; th -->
+            <tr> <!--organiza a tabela em linha-->
+
+                <!--O th define as células de cabeçalho em uma tabela-->
+                <th>Nome da Instituição de Ensino</th>
+                <th>Aluno</th>
+                <th>Idade do aluno</th>
+                <th>Situação da Matricula</th>
+            </tr>
+            <tr>
+                <!--O td define as linhas das próximas colunas, ou seja, linhas de dados na tabela -->
+                <td>Univerdade Municipal de são Caetano do Sul</td>
+                <td>Alessandra Negro</td>
+                <td><input type="number" id="idade" name="idade" placeholder="Insira a idade do aluno" required></td> <!--Nesse campo usei o input para permitir que o usuario interaja com a tabela, podendo colocar a idade do Aluno.-->
+                <td><select type="Situação" id="Situação"> <!--Outro campo de interação, usado para formulário, porém adicionei a tabela para que o usuario possa escolher a Situação de Matricula do Aluno-->
+                    <option value="Verdadeiro">Matriculado</option> <!--O valor Verdadeiro remente que o Aluno está matriculado-->
+                    <option value="Falso">Não Matriculado</option> <!--O valor Falso remente que o Aluno não está matriculado-->
+                </select></td>
+            </tr>
+            <tr>
+                <!--Novo aluno na tabela para que tenha duas linhas de exemplo-->
+                <td>Universidade Nove de Julho</td>
+                <td>João da Silva</td>
+                <td><input type="number" id="idade" name="idade" placeholder="Insira a idade do aluno" required></td>
+                <td>
+                    <select type="Situação" id="Situação"> <!--Nesse campo especifico não faz-se necessario o uso do id. Escrevi para não esquecer-->
+                        <option value="Verdadeiro">Matriculado</option>
+                        <option value="falso">Não Matriculado</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Formulário</h2> <!--Para deixar organizado na visualização da página. Facilita o entendimento do aluno que olhar para o código e para a tela-->
+
+        <!--Criei uma nova tabela para que as informações do formulario estejam bem organizadas na página-->
+        <table border="1">
+            <tr>
+                <td><label for="Nome">Criação de Cadastro:</label></td> <!--Label é usado para associar um texto ao campo do input-->
+                <td><label for="idadeT2">Idade:</label></td> <!--o id no input deve ter o mesmo valor associado ao for do label  -->
+                <td><label for="data">Data:</label></td>
+            </tr>
+            <tr>
+            <td><input type="text" id="Nome" name="Nome" placeholder="Insira o nome do aluno" required></td>
+            <td><input type="number" id="idadeT2" placeholder="Insira a Idade do Aluno" required></td>
+            <td><input type="date" id="data" name="data" placeholder="Insira a data de hoje" required></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <label for="obs">Observações:</label><br>
+        <textarea id="obs" name="obs" placeholder="Insira as observações de melhoria" ></textarea><br>
+
+        <br>
+
+        <label for="senha">Insira a senha:</label><br>
+        <input type="password" id="senha" placeholder="digite a senha" required><br>
+
+        <br>
+
+        <label for="cidade">Escolha a sua cidade:</label><br>
+        <input type="radio" id="SP" name="cidade" value="São Paulo">
+        <label for="SP">São Paulo</label><br>
+        <input type="radio" id="SC" name="cidade" value="São Caetano">
+        <label for="SC">São Caetano</label><br>
+        <input type="radio" id="SA" name="cidade" value="Santo Andre">
+        <label for="SA">Santo André</label><br>
+    </form>
+
+    <br>
+
+    <!--Agora iremos aprender a indexar as paginas Web-->
+    <h4>Criando Atalhos:</h4>
+
+    <ul> <!--Cria uma lista desordenada-->
+        <li> <!--Esse campo realiza a definição da lista criada pelo ul ou pelo ol-->
+            <a href="https://www.google.com/?hl=es&authuser=1">Google</a> <!-- a herf="" faz a função de ancoragem, linkando um site externo ou uma imagem à sua pagina web. Tambem pode ser usado para baixar arquivos-->
+        </li>
+        <li>
+            <a href="https://openai.com/es-ES/chatgpt/overview/">Chat GPT</a>
+        </li>
+    </ol> <!--Cria uma lista de forma ordenada, basicamente numera sua lista--> <!--Deveria ter fechado com o ul, porém usei o ol para explicação.-->
+</body>
+</html>
